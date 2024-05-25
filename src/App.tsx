@@ -1,21 +1,23 @@
 import "./App.css";
-import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import HomePage from "./components/navbar/index";
+import LoginPage from "./components/pages/login";
+import MatchesPage from "./components/pages/login";
+import ProfilePage from "./components/pages/login";
+import Navbar from "./components/navbar/NavbarElements";
 
-import Home from "./pages/Home";
-import LookingFor from "./pages/LookingFor";
-import AccountCreation from "./pages/AccountCreation";
-import AccountCreationBasicInfo from "./pages/AccountCreation_BasicInfo";
-import WorkStyle from "./pages/AccountCreation_WorkStyle";
-
-function App() {
-  //const [count, setCount] = useState(0);
-
+const App = () => {
   return (
-    <div>
-      <AccountCreation />
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/matches" element={<ProfilePage />} />
+        <Route path="/profile" element={<MatchesPage />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
