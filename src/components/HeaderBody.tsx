@@ -7,8 +7,8 @@ interface Props {
 function HeaderBody(props: Props) {
   return (
     <>
-      <h1>{props.header}</h1>
-      <p>{props.body}</p>
+      <h1 className="text-center">{props.header}</h1>
+      <p className="text-center">{props.body}</p>
     </>
   );
 }
