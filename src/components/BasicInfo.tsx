@@ -67,6 +67,17 @@ function BasicInfoForm() {
         ></textarea>
       </div>
 
+      <div className="form-group">
+        <label htmlFor="exampleFormControlFile1">
+          Upload Profile Picture:{" "}
+        </label>
+        <input
+          type="file"
+          className="form-control-file"
+          id="exampleFormControlFile1"
+        />
+      </div>
+
       <button type="submit" className="btn btn-primary">
         Next
       </button>
