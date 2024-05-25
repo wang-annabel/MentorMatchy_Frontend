@@ -1,5 +1,7 @@
-import { useState } from "react";
 import "./App.css";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Home from "./pages/Home";
 import LookingFor from "./pages/LookingFor";
 import AccountCreation from "./pages/AccountCreation";
@@ -11,7 +13,7 @@ function App() {
 
   return (
     <div>
-      <WorkStyle />
+      <AccountCreation />
     </div>
   );
 }
