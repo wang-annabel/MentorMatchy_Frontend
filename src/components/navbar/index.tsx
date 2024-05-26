@@ -39,15 +39,15 @@ useEffect(() => {
           mentees based on shared interests, work styles, and career goals. Whether
           you are seeking professional guidance, a role model, or a supportive friend,
           Mentor Matchy is here to help you thrive and achieve your fullest potential.
-          Join us in creating a community where women uplift each other and grow together.</p>
+      </p>
       </div>
 
       <div data-aos="fade-up" data-aos-duration="2000" className="empowering-body">
         <h2>Empowering Women</h2>
         <p>At Mentor Matchy, we are dedicated to empowering women to reach their full potential.
           Our platform connects women with mentors who share their interests and career aspirations,
-          fostering a community of support and growth. By facilitating meaningful mentorships,
-          we aim to inspire confidence, build leadership skills, and create opportunities
+          fostering a community of support and growth and breaking that glass ceiling. 
+          We aim to inspire confidence, build leadership skills, and create opportunities
           for women to excel in every aspect of their lives. Join Mentor Matchy and be part
           of a movement where women empower women to achieve greatness.</p>
       </div>
