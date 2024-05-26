@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ReactCardFlip from "react-card-flip";
 
 import profile_pic from "../assets/profile_pic.png"
+import "./tile.css"
 
 interface Props {
     name: string;
@@ -21,6 +22,8 @@ const FlipCard = ({name, interests, industry, about}: Props) => {
     // find matches!
   }
 
+  // https://blog.openreplay.com/creating-animated-flip-cards-in-react/
+  
   return (
     <div className="match-card">
       <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
