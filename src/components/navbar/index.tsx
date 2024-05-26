@@ -1,59 +1,47 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import './nav.css'; // Import your component-specific CSS file
 
-import AccountCreation from "../../pages/AccountCreation";
+const HomePage: React.FC = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
-const HomePage = () => {
   return (
-    <div>
-      <div className="nav-bar">
-        <h1>Mentor Matchy</h1>
-        <p>Mentees</p>
-        <p>Sign In</p>
-      </div>
-
+    <div className="Body">
       <div className="upper-heading">
-        <div className="motto">
+        <div data-aos="fade-up" data-aos-duration="2000" className="motto">
           <p>Empower Your Path</p>
         </div>
-        <div className="motto2">
+        <div data-aos="fade-up" data-aos-duration="2000" className="motto2">
           <p>with Mentor Matchy</p>
         </div>
       </div>
 
-      <div className="match-button">
-        <a href="/accountCreation">
-          <button>Start Matching!</button>
-        </a>
+      <div data-aos="fade-up" className="match-button">
+        <button>Start Matching!</button>
       </div>
 
-      <div className="mission-body">
+      <div data-aos="fade-up" data-aos-duration="2000" className="mission-body">
         <h2>Our Mission</h2>
-        <p>
-          At Mentor Matchy, our mission is to empower women by fostering
-          meaningful connections through personalized mentorship. We believe in
-          the power of women supporting women, and our platform is designed to
-          match mentors and mentees based on shared interests, work styles, and
-          career goals. Whether you are seeking professional guidance, a role
-          model, or a supportive friend, Mentor Matchy is here to help you
-          thrive and achieve your fullest potential. Join us in creating a
-          community where women uplift each other and grow together.
-        </p>
+        <p>At Mentor Matchy, our mission is to empower women by fostering meaningful
+          connections through personalized mentorship. We believe in the power of
+          women supporting women, and our platform is designed to match mentors and
+          mentees based on shared interests, work styles, and career goals. Whether
+          you are seeking professional guidance, a role model, or a supportive friend,
+          Mentor Matchy is here to help you thrive and achieve your fullest potential.
+          Join us in creating a community where women uplift each other and grow together.</p>
       </div>
 
-      <div className="empowering-body">
+      <div data-aos="fade-up" data-aos-duration="2000" className="empowering-body">
         <h2>Empowering Women</h2>
-        <p>
-          At Mentor Matchy, we are dedicated to empowering women to reach their
-          full potential. Our platform connects women with mentors who share
-          their interests and career aspirations, fostering a community of
-          support and growth. By facilitating meaningful mentorships, we aim to
-          inspire confidence, build leadership skills, and create opportunities
-          for women to excel in every aspect of their lives. Join Mentor Matchy
-          and be part of a movement where women empower women to achieve
-          greatness.
-        </p>
+        <p>At Mentor Matchy, we are dedicated to empowering women to reach their full potential.
+          Our platform connects women with mentors who share their interests and career aspirations,
+          fostering a community of support and growth. By facilitating meaningful mentorships,
+          we aim to inspire confidence, build leadership skills, and create opportunities
+          for women to excel in every aspect of their lives. Join Mentor Matchy and be part
+          of a movement where women empower women to achieve greatness.</p>
       </div>
     </div>
   );
