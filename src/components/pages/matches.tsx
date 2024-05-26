@@ -21,29 +21,9 @@ const MatchesPage = () => {
         .catch((error) => console.error(error));
     }, []);
 
-    const handleButtonClick = async () => {
-      try {
-        const email = 'kmora@gmail.com'
-        const response = await axios.get(`/matchy/${email}`); 
-        setMatches(response.data);
-      } catch (error) {
-        console.error('Error:', error);
-      }
-
-      try {
-        const response = await fetch('/run-python-code', { method: 'POST' });
-        const data = await response.json();
-        console.log(data); // Handle the response as needed
-      } catch (error) {
-        
-
-      }
-    };
-
     return (
       <div>
       <h1>Your Top Matches</h1>
-      <div className="run-button"><button onClick={handleButtonClick}>Start Matching!</button></div>
       <div className="tile-container">
 
         {matches.map(match => 
