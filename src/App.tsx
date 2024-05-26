@@ -18,8 +18,8 @@ const App = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/matches" element={<ProfilePage />} />
-        <Route path="/profile" element={<MatchesPage />} />
+        <Route path="/matches" element={<MatchesPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
         <Route path="/accountCreation" element={<AccountCreation />} />
         <Route path="/basicInfo" element={<AccountCreationBasicInfo />} />
         <Route path="/workStyle" element={<WorkStyle />} />

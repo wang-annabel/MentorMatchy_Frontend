@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import '../tile.css';
+import axios from 'axios';
 
 import FlipCard from "../MatchTile";
 // import MentorFlipCard from "../RequestTile";
@@ -11,15 +13,37 @@ const MatchesPage = () => {
         method: "GET",
         redirect: "follow"
       };
+    
       
       fetch("http://localhost:3000/matchy/kmora@gmail.com", requestOptions)
         .then((response) => response.json())
         .then((result) => setMatches(result))
         .catch((error) => console.error(error));
     }, []);
+
+    const handleButtonClick = async () => {
+      try {
+        const email = 'kmora@gmail.com'
+        const response = await axios.get(`/matchy/${email}`); 
+        setMatches(response.data);
+      } catch (error) {
+        console.error('Error:', error);
+      }
+
+      try {
+        const response = await fetch('/run-python-code', { method: 'POST' });
+        const data = await response.json();
+        console.log(data); // Handle the response as needed
+      } catch (error) {
+        
+
+      }
+    };
+
     return (
       <div>
       <h1>Your Top Matches</h1>
+      <div className="run-button"><button onClick={handleButtonClick}>Start Matching!</button></div>
       <div className="tile-container">
 
         {matches.map(match => 
