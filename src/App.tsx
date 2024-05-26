@@ -5,6 +5,7 @@ import LoginPage from "./components/pages/login";
 import MatchesPage from "./components/pages/login";
 import ProfilePage from "./components/pages/login";
 import Navbar from "./components/navbar/NavbarElements";
+import AccountCreation from "./pages/AccountCreation";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/matches" element={<ProfilePage />} />
         <Route path="/profile" element={<MatchesPage />} />
+        <Route path="/accountCreation" element={<AccountCreation />} />
       </Routes>
     </Router>
   );
