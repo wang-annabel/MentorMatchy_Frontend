@@ -1,18 +1,18 @@
 import './pages.css';
 import React, { useState } from 'react';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from './firebase';
 
-const LoginPage: React.FC = () => {
+const Signup: React.FC = () => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [error, setError] = useState<string | null>(null);
 
-  const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSignup = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      alert('Login successful!');
+      await createUserWithEmailAndPassword(auth, email, password);
+      alert('Signup successful!');
     } catch (error: any) {
       setError(error.message);
     }
@@ -20,18 +20,25 @@ const LoginPage: React.FC = () => {
 
   return (
     <div>
-      <h2>Login</h2>
-      <form onSubmit={handleLogin}>
-        <div>
-          <label>Email:</label>
+      <h2>Sign Up</h2>
+      <form onSubmit={handleSignup}>
+        <div className="email-title">
+       <label>Email:</label>
+       </div>
+        
+        <div className="email-field">
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-        </div>
-        <div>
+        </div> 
+        
+        <div className="password-title">
           <label>Password:</label>
+        </div>
+        
+        <div className="password-field">
           <input
             type="password"
             value={password}
@@ -39,11 +46,10 @@ const LoginPage: React.FC = () => {
           />
         </div>
         {error && <p>{error}</p>}
-        <button type="submit">Login</button>
+        <button type="submit">Sign Up</button>
       </form>
     </div>
   );
 };
 
-  export default LoginPage;
-  
+export default Signup;
