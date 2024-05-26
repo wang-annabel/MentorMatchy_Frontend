@@ -7,13 +7,45 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
+import { useState, useEffect } from 'react';
+
 const ProfilePage = () => {
+  const [name, setName] = useState('')
+  const [pronouns, setPronouns] = useState('')
+  const [email, setEmail] = useState('')
+  const [about, setAbout] = useState('')
+  const [interests, setInterests] = useState('')
+  const[industry, setIndustry] = useState('')
+
+  const requestOptions = {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' }
+  };
+
+  useEffect(() => {
+    fetch("http://localhost:3000/email/kmora@gmail.com", requestOptions)
+      .then(result=> {
+        return result.json()
+      }) 
+      .then(data => {
+        const userData = data[0]
+
+        setName(userData.first_name + " " + userData.last_name)
+        setPronouns(userData.pronouns)
+        setAbout(userData.about)
+        setEmail(userData.email_address)
+        setInterests(userData.interests)
+        setIndustry(userData.industry)
+      })
+  }, [])
+
     return (
       <div>
       <Container>
         <Row>
-          <Col><ProfilePhoto name="Jane Doe" pronouns="she/her" email="jdoe@gmail.com"></ProfilePhoto></Col>
-          <Col><UserInfo about="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in turpis eu leo feugiat gravida vel eu erat. Maecenas lacinia aliquet felis vitae sagittis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec vestibulum velit ipsum, ac rutrum sapien aliquet sed. Etiam malesuada sapien vel." interests="Lorem, ipsum, dolor, sit, amet" industry="Film/Media"></UserInfo></Col>
+          <Col><ProfilePhoto name={name} pronouns={pronouns} email={email}></ProfilePhoto></Col>
+          <Col><UserInfo about={about}
+          interests={interests} industry={industry}></UserInfo></Col>
         </Row>
         <Row>
           <MenteeMatched name="Greta Gerwig"></MenteeMatched>
