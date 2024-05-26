@@ -11,6 +11,7 @@ import SignUp from "./components/pages/signup";
 
 const App = () => {
   return (
+    <>
     <Router>
       <Navbar />
       <Routes>
@@ -24,6 +25,7 @@ const App = () => {
         <Route path="/workStyle" element={<WorkStyle />} />
       </Routes>
     </Router>
+    </>
   );
 };
 
