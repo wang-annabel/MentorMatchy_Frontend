@@ -9,6 +9,14 @@ interface Props {
 
 function ProfilePhoto({name, pronouns, email}: Props) {
   return (
+    <>
+      <style type="text/css">
+        {`
+            .text-center {
+                background-color: pink;
+            }
+        `}
+      </style>
     <CCard className="text-center" style={{ width: '18rem'}}>
       <CCard.Img variant="top" src={profile_pic} />
       <CCard.Body>
@@ -21,6 +29,7 @@ function ProfilePhoto({name, pronouns, email}: Props) {
         </CCard.Text>
       </CCard.Body>
     </CCard>
+    </>
   );
 }
 

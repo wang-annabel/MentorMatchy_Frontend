@@ -1,0 +1,72 @@
+/* tile.css */
+
+h1 {
+    text-align: center;
+    padding-top: 80px;
+}
+
+.tile-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .match-card {
+    flex: 1 1 calc(33.333% - 40px); /* Adjusts to 3 cards per row with space */
+    box-sizing: border-box;
+    margin: 20px;
+    max-width: calc(33.333% - 40px); /* Ensures the max width is 3 cards per row */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  
+  .match-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .card-img-top {
+    width: 100%;
+    height: auto;
+  }
+  
+  .card-body {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .front, .back {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+.run-button {
+  padding-top: 20px;
+  text-align: center;
+}

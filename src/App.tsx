@@ -9,6 +9,7 @@ import AccountCreation from "./pages/AccountCreation";
 import AccountCreationBasicInfo from "./pages/AccountCreation_BasicInfo";
 import WorkStyle from "./pages/AccountCreation_WorkStyle";
 import { useState } from "react";
+import SignUp from "./components/pages/signup";
 
 const App = () => {
    const [userProfile, setUserProfile] = useState({
@@ -28,6 +29,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignUp />} />
         <Route path="/matches" element={<MatchesPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/accountCreation" element={<AccountCreation />} />

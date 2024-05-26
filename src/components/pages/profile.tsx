@@ -47,6 +47,7 @@ const ProfilePage = () => {
           <Col><UserInfo about={about}
           interests={interests} industry={industry}></UserInfo></Col>
         </Row>
+        <h1>Matched With</h1>
         <Row>
           <MenteeMatched name="Greta Gerwig"></MenteeMatched>
         </Row>
