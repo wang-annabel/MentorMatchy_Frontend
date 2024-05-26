@@ -12,13 +12,6 @@ function AccountCreationBasicInfo() {
     <>
       {headerbody}
       <BasicInfoForm />
-      <div className="float-end">
-        <a href="/workStyle">
-          <button type="button" className="btn btn-primary">
-            Next
-          </button>
-        </a>
-      </div>
     </>
   );
 }

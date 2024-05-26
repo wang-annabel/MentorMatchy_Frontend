@@ -14,7 +14,7 @@ function WorkStyle() {
       <WorkStyleForm />
       <div className="float-end">
         <a href="/profile">
-          <button type="button" className="btn btn-primary">
+          <button type="submit" className="btn btn-primary">
             Submit
           </button>
         </a>

@@ -1,83 +1,124 @@
-function BasicInfoForm() {
+import React from "react";
+
+class BasicInfoForm extends React.Component {
+
+  handleSubmit = (event) => {
+    event.preventDefault()
+    console.log("it submitted")
+    console.log(event.target.FIRST_NAME.value)
+
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ FIRST_NAME: event.target.FIRST_NAME.value,
+                            LAST_NAME: event.target.LAST_NAME.value,
+                          EMAIL_ADDRESS: event.target.EMAIL_ADDRESS.value,
+                        PRONOUNS: event.target.PRONOUNS.value,
+                        INDUSTRY: event.target.INDUSTRY.value,
+                        INTERESTS: event.target.INTERESTS.value,
+                        ABOUT_ME: event.target.ABOUT_ME.value,
+                       })
+  };
+  fetch("http://localhost:3000/user", requestOptions).then(result=> {
+       console.log(result)
+    })
+}
+
+  render() {
+    console.log('it be rendering')
   return (
-    <form>
+    <form onSubmit = {this.handleSubmit}>
       <div className="form-group">
-        <label htmlFor="exampleFormControlInput1">*First Name: </label>
+        <label htmlFor="FIRST_NAME">*First Name: </label>
         <input
           type="text"
           className="form-control"
-          id="exampleFormControlInput1"
+          id="FIRST_NAME"
+          //value = {this.state.FIRST_NAME}
           placeholder="Jane"
+          required
         />
       </div>
 
       <div className="form-group">
-        <label htmlFor="exampleFormControlInput1">*Last Name: </label>
+        <label htmlFor="LAST_NAME">*Last Name: </label>
         <input
           type="text"
           className="form-control"
-          id="exampleFormControlInput1"
+          id="LAST_NAME"
           placeholder="Doe"
+          required
         />
       </div>
 
       <div className="form-group">
-        <label htmlFor="exampleFormControlInput1">*Email address: </label>
+        <label htmlFor="EMAIL_ADDRESS">*Email address: </label>
         <input
           type="email"
           className="form-control"
-          id="exampleFormControlInput1"
+          id="EMAIL_ADDRESS"
           placeholder="name@example.com"
+          required
         />
       </div>
 
       <div className="form-group">
-        <label htmlFor="exampleFormControlInput1">Pronouns: </label>
+        <label htmlFor="PRONOUNS">Pronouns: </label>
         <input
           type="text"
           className="form-control"
-          id="exampleFormControlInput1"
+          id="PRONOUNS"
         />
       </div>
 
       <div className="form-group">
-        <label htmlFor="exampleFormControlInput1">*Industry: </label>
+        <label htmlFor="INDUSTRY">*Industry: </label>
         <input
           type="text"
           className="form-control"
-          id="exampleFormControlInput1"
+          id="INDUSTRY"
+          required
         />
       </div>
 
       <div className="form-group">
-        <label htmlFor="exampleFormControlInput1">Interests: </label>
+        <label htmlFor="INTERESTS">Interests: </label>
         <input
           type="text"
           className="form-control"
-          id="exampleFormControlInput1"
+          id="INTERESTS"
         />
       </div>
 
       <div className="form-group">
-        <label htmlFor="exampleFormControlTextarea1">About Me: </label>
+        <label htmlFor="ABOUT_ME">About Me: </label>
         <textarea
           className="form-control"
-          id="exampleFormControlTextarea1"
+          id="ABOUT_ME"
           placeholder="(50 word limit)"
         ></textarea>
       </div>
 
       <div className="form-group">
-        <label htmlFor="exampleFormControlFile1">
+        <label htmlFor="PHOTO_LINK">
           Upload Profile Picture:{" "}
         </label>
         <input
           type="file"
           className="form-control-file"
-          id="exampleFormControlFile1"
+          id="PHOTO_LINK"
         />
       </div>
+
+      <div className="float-end">
+      {/* <a href="/workStyle"> */}
+          <button type="submit" className="btn btn-primary">
+            Next
+          </button>
+        {/* </a> */}
+        </div>
     </form>
   );
+}
 }
 export default BasicInfoForm;
