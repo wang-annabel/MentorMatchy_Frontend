@@ -28,8 +28,6 @@ const FlipCard = ({name, interests, industry, about, pronouns, image}: Props) =>
   
   return (
     <div className="match-card">
-    <div className="row g-0">
-    <div className="col-md-4 mb-3">
       <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
         {/*Front Side*/}
         <div className="front" onClick={handleCardClick}>
@@ -73,8 +71,6 @@ const FlipCard = ({name, interests, industry, about, pronouns, image}: Props) =>
       <button onClick={handleButtonClick}>Match</button>
       </div>
       </ReactCardFlip>
-    </div>
-    </div>
     </div>
   );
 };

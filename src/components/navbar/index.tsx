@@ -1,12 +1,20 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { useNavigate } from 'react-router-dom';
 import './nav.css'; // Import your component-specific CSS file
 
 const HomePage: React.FC = () => {
-  useEffect(() => {
+const navigate = useNavigate();
+
+useEffect(() => {
     AOS.init();
   }, []);
+
+  const handleButtonClick = () => {
+    navigate('/accountCreation'); // Navigate to the match page
+  };
+
 
   return (
     <div className="Body">
@@ -20,7 +28,7 @@ const HomePage: React.FC = () => {
       </div>
 
       <div data-aos="fade-up" className="match-button">
-        <button>Start Matching!</button>
+        <button onClick={handleButtonClick}>Start Matching!</button>
       </div>
 
       <div data-aos="fade-up" data-aos-duration="2000" className="mission-body">

@@ -1,54 +1,68 @@
-/* Container for all cards */
-.match-card {
+/* tile.css */
 
-    display: grid;
-    grid-auto-rows: auto;
-    grid-gap: 1rem; 
-    
+h1 {
+    text-align: center;
+    padding-top: 80px;
 }
 
-    
-.card {
-    
-    border: 2px solid #e7e7e7;
-    border-radius: 4px;
-    padding: .5rem;
-    
-}
-
-
-  /*
-  .card {
-    flex: 1 1 calc(33.333% - 20px);
-    box-sizing: border-box;
-    margin: 10px;
+.tile-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     padding: 20px;
-    background-color: #f0f0f0;
+  }
+  
+  .match-card {
+    flex: 1 1 calc(33.333% - 40px); /* Adjusts to 3 cards per row with space */
+    box-sizing: border-box;
+    margin: 20px;
+    max-width: calc(33.333% - 40px); /* Ensures the max width is 3 cards per row */
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 8px;
+    overflow: hidden;
     transition: transform 0.3s;
   }
-/*   
+  
+  .match-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
   .card-img-top {
-    width: 30%;
+    width: 100%;
     height: auto;
-    border-radius: 5px 5px 0 0;
   }
   
   .card-body {
-    padding: 15px;
+    padding: 10px;
+    text-align: center;
   }
   
-  .card-title {
-    font-size: 1.25rem;
-    margin-bottom: 10px;
+  .front, .back {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
   }
   
-  .card-text {
-    font-size: 1rem;
-    margin-bottom: 10px;
+  button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
   }
-
-  .card:hover {
-    transform: scale(1.05); 
-  } */
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  

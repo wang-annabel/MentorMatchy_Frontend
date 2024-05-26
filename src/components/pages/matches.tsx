@@ -19,14 +19,15 @@ const MatchesPage = () => {
     }, []);
     return (
       <div>
-        <h1>Your Top Matches</h1>
-        
+      <h1>Your Top Matches</h1>
+      <div className="tile-container">
 
         {matches.map(match => 
            <FlipCard name={match.first_name + " " + match.last_name} pronouns={match.pronouns} interests={match.interests} industry={match.industry} about={match.about_me} image={match.photo_link}></FlipCard>
         )}
         {/* <FlipCard name="Mentor 1" interests="board games, walks" industry="Film/Media" about="director"></FlipCard>
         <MentorFlipCard name="Requester 1" interests="singing, walks" industry="Film/Media" about="college student"></MentorFlipCard> */}
+      </div>
       </div>
     );
   }
