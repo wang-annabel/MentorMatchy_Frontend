@@ -1,21 +1,29 @@
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import "./App.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import HomePage from "./components/navbar/index";
+import LoginPage from "./components/pages/login";
+import MatchesPage from "./components/pages/login";
+import ProfilePage from "./components/pages/login";
+import Navbar from "./components/navbar/NavbarElements";
+import AccountCreation from "./pages/AccountCreation";
+import AccountCreationBasicInfo from "./pages/AccountCreation_BasicInfo";
+import WorkStyle from "./pages/AccountCreation_WorkStyle";
 
-import ProfilePhoto from './components/ProfilePhoto';
-import UserInfo from './components/UserInfo';
-import MenteeMatched from './components/Mentee_MatchedWith';
-
-function App() {
-    return (
-        <Container>
-            <Row>
-                <Col><ProfilePhoto name='Jane Doe' pronouns='she/her' email='jdoe@gmail.com'></ProfilePhoto></Col>
-                <Col><UserInfo about='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in turpis eu leo feugiat gravida vel eu erat. Maecenas lacinia aliquet felis vitae sagittis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec vestibulum velit ipsum, ac rutrum sapien aliquet sed. Etiam malesuada sapien vel.' interests='Lorem, ipsum, dolor, sit, amet' industry='Film/Media'></UserInfo></Col>           
-            </Row>
-            <div><MenteeMatched name="Greta Gerwig"></MenteeMatched></div>
-        </Container>
-    );
-}
+const App = () => {
+  return (
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/matches" element={<ProfilePage />} />
+        <Route path="/profile" element={<MatchesPage />} />
+        <Route path="/accountCreation" element={<AccountCreation />} />
+        <Route path="/basicInfo" element={<AccountCreationBasicInfo />} />
+        <Route path="/workStyle" element={<WorkStyle />} />
+      </Routes>
+    </Router>
+  );
+};
 
 export default App;
