@@ -1,0 +1,28 @@
+nav {
+    justify-content: space-between;
+}
+
+.nav-bar  {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    background-color: #6462F5;
+    font-size: 30px;
+    padding-right: 20px;
+}
+
+.nav-bar li:last-child {
+    margin-right: 0;
+}
+
+.nav-bar  a {
+    color: white;
+    font-weight: 550;
+    text-decoration: none;
+    padding-left: 20px;
+}
+
+
+.navbar {
+    display: grid;
+    gap: 20px;
+}
