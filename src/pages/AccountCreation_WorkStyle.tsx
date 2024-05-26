@@ -1,7 +1,7 @@
 import HeaderBody from "../components/HeaderBody";
 import WorkStyleForm from "../components/WorkStyleForm";
 
-function WorkStyle() {
+function WorkStyle({setUserProfile}) {
   const headerbody = (
     <HeaderBody
       header="Work Style"
@@ -12,13 +12,14 @@ function WorkStyle() {
     <>
       {headerbody}
       <WorkStyleForm />
+
       <div className="float-end">
-        <a href="/profile">
-          <button type="submit" className="btn btn-primary">
-            Submit
+      <a href="/profile">
+          <button className="btn btn-primary">
+            Next
           </button>
         </a>
-      </div>
+        </div>
     </>
   );
 }

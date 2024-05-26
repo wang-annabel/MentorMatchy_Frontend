@@ -1,7 +1,7 @@
 import LookingForForm from "../components/LookingForForm";
 import HeaderBody from "../components/HeaderBody";
 
-function LookingFor() {
+function LookingFor({setUserProfile}) {
   const headerBody = (
     <HeaderBody
       header="What are you looking for?"

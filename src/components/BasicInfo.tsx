@@ -1,24 +1,25 @@
 import React from "react";
 
 class BasicInfoForm extends React.Component {
+  //setUserProfile(prev => ({...prev, name: "hello"});)
+  //const { setUserProfile } = this.state;
 
   handleSubmit = (event) => {
     event.preventDefault()
-    console.log("it submitted")
-    console.log(event.target.FIRST_NAME.value)
 
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ FIRST_NAME: event.target.FIRST_NAME.value,
-                            LAST_NAME: event.target.LAST_NAME.value,
-                          EMAIL_ADDRESS: event.target.EMAIL_ADDRESS.value,
-                        PRONOUNS: event.target.PRONOUNS.value,
-                        INDUSTRY: event.target.INDUSTRY.value,
-                        INTERESTS: event.target.INTERESTS.value,
-                        ABOUT_ME: event.target.ABOUT_ME.value,
+                             LAST_NAME: event.target.LAST_NAME.value,
+                             EMAIL_ADDRESS: event.target.EMAIL_ADDRESS.value,
+                             PRONOUNS: event.target.PRONOUNS.value,
+                             INDUSTRY: event.target.INDUSTRY.value,
+                             INTERESTS: event.target.INTERESTS.value,
+                             ABOUT_ME: event.target.ABOUT_ME.value,
                        })
   };
+
   fetch("http://localhost:3000/user", requestOptions).then(result=> {
        console.log(result)
     })
@@ -111,11 +112,11 @@ class BasicInfoForm extends React.Component {
       </div>
 
       <div className="float-end">
-      {/* <a href="/workStyle"> */}
+      <a href="/workStyle">
           <button type="submit" className="btn btn-primary">
-            Next
+            Submit
           </button>
-        {/* </a> */}
+        </a>
         </div>
     </form>
   );
